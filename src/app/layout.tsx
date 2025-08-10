@@ -1,3 +1,4 @@
+export const dynamic = 'force-dynamic';
 import UserContextProvider from "@/contexts/UserContextProvider";
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
