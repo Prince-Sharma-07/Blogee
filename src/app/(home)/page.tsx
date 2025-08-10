@@ -1,3 +1,4 @@
+export const dynamic = 'force-dynamic';
 import BlogCard from "@/components/cards/BlogCard";
 import gqlClient from "@/services/graphQL";
 import { gql } from "graphql-request";

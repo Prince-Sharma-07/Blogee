@@ -22,7 +22,7 @@ const resolvers = {
     getBlog: getBlogById,
     getBlogs: filterBlogs,
     getCurrentUser: getUserFromCookies,
-    getCurrentUserBlogs
+    getCurrentUserBlogs,
   },
   Mutation: {
     // In Mutation all functions run after one another to ensure atomicity. eg. Bank payment
@@ -39,9 +39,14 @@ const server = new ApolloServer({
   resolvers,
 });
 
-const handler = startServerAndCreateNextHandler<NextRequest>(server, {
-  context: async (req) => ({ req }),
-});
+const handler = startServerAndCreateNextHandler(server);
 
-export { handler as GET, handler as POST };
+// export { handler as GET, handler as POST };
 
+export async function GET(request: NextRequest) {
+  return handler(request);
+}
+
+export async function POST(request: NextRequest) {
+  return handler(request);
+}
